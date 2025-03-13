@@ -21,11 +21,9 @@ abstract class RepositoryModule {
         preceptFactorRepositoryImpl: PreceptFactorRepositoryImpl
     ): PreceptFactorRepository
 
-    companion object {
-        @Provides
-        @Singleton
-        fun provideApiService(apiServiceImpl: ApiServiceImpl): ApiService {
-            return apiServiceImpl
-        }
-    }
+
+    @Binds
+    @Singleton
+    abstract fun provideApiService(apiServiceImpl: ApiServiceImpl): ApiService
+
 }
